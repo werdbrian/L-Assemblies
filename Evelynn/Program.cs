@@ -151,11 +151,12 @@ namespace Evelynn
         private static void Combo()
         {
             var target = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.True);
+          //  var targetq = TargetSelector.GetTarget(R.Range, TargetSelector.DamageType.True);
 
             if (target != null)
             {
                 if (Config.Item("UseRCombo").GetValue<bool>() && R.IsReady())
-                    R.Cast(target, false, true);
+                    R.Cast(target);
                 if (Config.Item("UseECombo").GetValue<bool>() && E.IsReady())
                     E.CastOnUnit(target);
 
