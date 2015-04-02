@@ -154,18 +154,22 @@ namespace Evelynn
 
             if (target != null)
             {
-                if (Config.Item("UseQCombo").GetValue<bool>())
-                    Q.Cast();
+                if (Config.Item("UseRCombo").GetValue<bool>() && R.IsReady() && GetComboDamage(target) > target.Health)
+                    R.Cast(target, false, true);
 
-                if (Config.Item("UseWCombo").GetValue<bool>() && W.IsReady() &&
-                    ObjectManager.Player.HasBuffOfType(BuffType.Slow))
-                    W.Cast();
+
+
 
                 if (Config.Item("UseECombo").GetValue<bool>() && E.IsReady())
                     E.CastOnUnit(target);
 
-                if (Config.Item("UseRCombo").GetValue<bool>() && R.IsReady() && GetComboDamage(target) > target.Health)
-                    R.Cast(target, false, true);
+                if (Config.Item("UseQCombo").GetValue<bool>())
+                    Q.Cast();
+                
+                if (Config.Item("UseWCombo").GetValue<bool>() && W.IsReady() &&
+                    ObjectManager.Player.HasBuffOfType(BuffType.Slow))
+                    W.Cast();
+
             }
         }
 
