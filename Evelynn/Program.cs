@@ -154,12 +154,8 @@ namespace Evelynn
 
             if (target != null)
             {
-                if (Config.Item("UseRCombo").GetValue<bool>() && R.IsReady() && GetComboDamage(target) > target.Health)
+                if (Config.Item("UseRCombo").GetValue<bool>() && R.IsReady())
                     R.Cast(target, false, true);
-
-
-
-
                 if (Config.Item("UseECombo").GetValue<bool>() && E.IsReady())
                     E.CastOnUnit(target);
 
