@@ -121,7 +121,7 @@ namespace Evelynn
         private static void Game_OnGameUpdate(EventArgs args)
         {
             if (!Orbwalking.CanMove(40)) return;
-             if (Config.Item("UseWCombo").GetValue<bool>() && W.IsReady() &&
+             if (Config.Item("UseWCombo").GetValue<bool>() && W.IsReady()
                     W.Cast();
             if (Config.Item("ComboActive").GetValue<KeyBind>().Active)
             {
