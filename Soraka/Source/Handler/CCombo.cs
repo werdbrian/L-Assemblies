@@ -30,18 +30,22 @@ namespace SorakaSharp.Source.Handler
             // Validate spell usage
             if (!ComboValid)
                 return;
-
+            Console.WriteLine("combo");
             var target = TargetSelector.GetTarget(Q.IsEnabledReady() ? Q.Range : E.Range,
                 TargetSelector.DamageType.Magical);
+            Console.WriteLine("combo1");
 
             if (target != null)
             {
+            Console.WriteLine("combo2");
+
                 //Cast Q
                 if (Q.IsEnabledReady() && Q.CanCast(target))
                 {
                     //Check for AOE to prevent casting on the edge..
         //            if (target.CountEnemiesInRange(Q.Width) == 1)
                 //    {
+                Console.WriteLine("hey3");
                         Q.Cast(target);
                //     }
                  //   else
