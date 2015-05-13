@@ -40,28 +40,28 @@ namespace SorakaSharp.Source.Handler
                 if (Q.IsEnabledReady() && Q.CanCast(target))
                 {
                     //Check for AOE to prevent casting on the edge..
-                    if (target.CountEnemiesInRange(Q.Width) == 1)
-                    {
+        //            if (target.CountEnemiesInRange(Q.Width) == 1)
+                //    {
                         Q.Cast(target);
-                    }
-                    else
-                    {
-                        Q.Cast(target, false, true);
-                    }
+               //     }
+                 //   else
+                 //   {
+                //        Q.Cast(target, false, true);
+                  //  }
                 }
 
                 //Cast E
                 if (E.IsEnabledReady() && E.CanCast(target))
                 {
                     //Check for AOE to prevent casting on the edge..
-                    if (target.CountEnemiesInRange(E.Width) == 1)
-                    {
+               //     if (target.CountEnemiesInRange(E.Width) == 1)
+                 //   {
                         E.Cast(target);
-                    }
-                    else
-                    {
-                        E.Cast(target, false, true);
-                    }
+                   // }
+                //    else
+                //    {
+                //        E.Cast(target, false, true);
+                //    }
                 }
             }
         }
